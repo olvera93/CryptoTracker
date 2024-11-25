@@ -1,4 +1,4 @@
-package com.olvera.cryptotracker.util
+package com.olvera.cryptotracker.core.domain.util
 
 typealias DomainError = Error
 
