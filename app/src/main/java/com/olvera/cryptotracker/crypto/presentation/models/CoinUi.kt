@@ -3,7 +3,7 @@ package com.olvera.cryptotracker.crypto.presentation.models
 import android.icu.text.NumberFormat
 import androidx.annotation.DrawableRes
 import com.olvera.cryptotracker.crypto.domain.Coin
-import com.olvera.cryptotracker.util.getDrawableIdForCoin
+import com.olvera.cryptotracker.core.presentation.util.getDrawableIdForCoin
 import java.util.Locale
 
 data class CoinUi(

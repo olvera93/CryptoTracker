@@ -1,4 +1,4 @@
-package com.olvera.cryptotracker.util
+package com.olvera.cryptotracker.core.presentation.util
 
 import com.olvera.cryptotracker.R
 
