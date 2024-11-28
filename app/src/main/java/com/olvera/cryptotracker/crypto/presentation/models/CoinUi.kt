@@ -4,6 +4,7 @@ import android.icu.text.NumberFormat
 import androidx.annotation.DrawableRes
 import com.olvera.cryptotracker.crypto.domain.Coin
 import com.olvera.cryptotracker.core.presentation.util.getDrawableIdForCoin
+import com.olvera.cryptotracker.crypto.presentation.coin_detail.DataPoint
 import java.util.Locale
 
 data class CoinUi(
@@ -14,8 +15,9 @@ data class CoinUi(
     val marketCapUsd: DisplayableNumber,
     val priceUsd: DisplayableNumber,
     val changePercent24Hr: DisplayableNumber,
-    @DrawableRes val iconRs: Int
-)
+    @DrawableRes val iconRs: Int,
+    val coinPriceHistory: List<DataPoint> = emptyList()
+    )
 
 data class DisplayableNumber(
     val value: Double,

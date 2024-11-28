@@ -1,5 +1,7 @@
 package com.olvera.cryptotracker.crypto.data.mappers
 
+import android.os.Build
+import androidx.annotation.RequiresApi
 import com.olvera.cryptotracker.crypto.data.networking.dto.CoinDto
 import com.olvera.cryptotracker.crypto.data.networking.dto.CoinPriceDto
 import com.olvera.cryptotracker.crypto.domain.Coin
@@ -19,10 +21,11 @@ fun CoinDto.toCoin(): Coin {
     )
 }
 
+@RequiresApi(Build.VERSION_CODES.O)
 fun CoinPriceDto.toCoinPrice(): CoinPrice {
     return CoinPrice(
         priceUsd = priceUsd,
         dateTime = Instant.ofEpochMilli(time)
-            .atZone(ZoneId.of("UTC"))
+            .atZone(ZoneId.systemDefault())
     )
 }
