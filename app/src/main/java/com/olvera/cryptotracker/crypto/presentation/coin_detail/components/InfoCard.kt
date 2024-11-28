@@ -20,7 +20,6 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.vectorResource
-import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.PreviewLightDark
@@ -35,15 +34,13 @@ fun InfoCard(
     formattedText: String,
     icon: ImageVector,
     modifier: Modifier = Modifier,
-    contentColor: Color = MaterialTheme.colorScheme.onSurface
+    contentColor: Color = MaterialTheme.colorScheme.onSurface,
 ) {
-
     val defaultTextStyle = LocalTextStyle.current.copy(
         textAlign = TextAlign.Center,
         fontSize = 18.sp,
         color = contentColor
     )
-
     Card(
         modifier = modifier
             .padding(8.dp)
@@ -51,7 +48,7 @@ fun InfoCard(
                 elevation = 15.dp,
                 shape = RectangleShape,
                 ambientColor = MaterialTheme.colorScheme.primary,
-                spotColor = MaterialTheme.colorScheme.primary
+                spotColor = MaterialTheme.colorScheme.primary,
             ),
         shape = RectangleShape,
         border = BorderStroke(
@@ -63,7 +60,6 @@ fun InfoCard(
             contentColor = contentColor
         )
     ) {
-
         AnimatedContent(
             targetState = icon,
             modifier = Modifier.align(
@@ -71,7 +67,6 @@ fun InfoCard(
             ),
             label = "IconAnimation"
         ) { icon ->
-
             Icon(
                 imageVector = icon,
                 contentDescription = title,
@@ -81,9 +76,7 @@ fun InfoCard(
                 tint = contentColor
             )
         }
-
         Spacer(modifier = Modifier.height(8.dp))
-
         AnimatedContent(
             targetState = formattedText,
             modifier = Modifier.align(
@@ -91,7 +84,6 @@ fun InfoCard(
             ),
             label = "ValueAnimation"
         ) { formattedText ->
-
             Text(
                 text = formattedText,
                 style = defaultTextStyle,
@@ -99,9 +91,7 @@ fun InfoCard(
                     .padding(horizontal = 16.dp)
             )
         }
-
         Spacer(modifier = Modifier.height(8.dp))
-
         Text(
             text = title,
             textAlign = TextAlign.Center,
@@ -113,10 +103,7 @@ fun InfoCard(
             fontWeight = FontWeight.Light,
             color = contentColor
         )
-
-
     }
-
 }
 
 @PreviewLightDark
@@ -127,7 +114,6 @@ private fun InfoCardPreview() {
             title = "Price",
             formattedText = "$ 63,157.44",
             icon = ImageVector.vectorResource(id = R.drawable.dollar)
-
         )
     }
 }
